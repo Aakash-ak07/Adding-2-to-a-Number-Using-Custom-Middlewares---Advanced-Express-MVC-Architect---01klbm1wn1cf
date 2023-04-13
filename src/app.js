@@ -10,9 +10,11 @@ app.use(express.json());
 // localhost:3000/?num=10 --> The router should return { num = 12 }
 
 function add2(req, res, next) {
-
-    //Write Your Code here
-    
+    num = parseInt(req.query.num);
+    if (!isNaN(num)) {
+        req.query.num = num + 2;
+    }
+    next();    
 }
 
 app.get('/', add2, (req, res) => {
