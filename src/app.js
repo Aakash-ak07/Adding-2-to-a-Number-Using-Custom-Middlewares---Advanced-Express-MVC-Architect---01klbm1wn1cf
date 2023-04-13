@@ -21,7 +21,7 @@ app.get('/', add2, (req, res) => {
     
     //num should be replaced by num+2 from the get request route
     const data = {
-        "num" : 5 
+        "num" : req.query.num 
     };
     
     res.send(JSON.stringify(data));
